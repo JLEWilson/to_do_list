@@ -98,6 +98,20 @@ Test: It will return false if the id is undefined.
 Code: findTask(4000);
 Expected Output: false
  
+Describe displayTaskDetails()
+
+Test: Return toDoList.taskItems.
+Code: displayTaskDetails(toDoList);
+Expected Output: {taskName: 'vacuum', dueDate: 'today', importanceInt: 1, id: 1;
+
+Test: It will loop through each taskItems and prints id's to console.
+Code: displayTaskDetails(toDoList);
+Expected Output: 1,2,3
+
+Test: It will loop through each taskItems and outputs taskItem.id, taskItem.taskName, taskItem.dueDate and the taskItem.importanceInt.
+Expected Output: Task {taskName: 'vacuum', dueDate: '2021-11-01', importanceInt: '3', id: 1}
+
+
 ## License - [MIT](https://opensource.org/licenses/MIT)
 
 _If you run into any problems or find a bug, would like to reach me for a separate reason, feel free to send me an email @jacobleeeugenewilson@gmail.com with details of your issue._

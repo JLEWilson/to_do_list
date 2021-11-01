@@ -8,6 +8,26 @@
   <title>To Do List</title>
 </head>
 <body>
-  
+  <div class="container">
+    <h1>To Do List</h1>
+    <button class="btn btn-dark shadow"  id="addTask" type="button">New Task</button>
+    <form id="formOne">
+      <div class="form-group addTaskGroup">
+        <input id="taskInfo" placeholder="What would you like to do?" type="text">
+        <input id="taskDate" placeholder="Due by:" type="date">
+        <label>Importance:</label>
+        <select id="taskImportance">
+          <option value="1">Not important</option>
+          <option value="2">Kind of Important</option>
+          <option value="3">Mandatory</option>
+        </select>
+        <button class="btn btn-dark shadow" align="right" id="submitTask" type="submit">Add Task</button>
+      </div>
+      
+    </form>
+    <ul class="output"> 
+
+    </ul>
+  </div>
 </body>
 </html>
