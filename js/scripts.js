@@ -38,20 +38,18 @@ function Task(taskName, dueDate, importanceInt){
 let toDoList = new ToDoList();
 
 function displayTaskDetails(toDoListToDisplay){
-  let output = $(".output");
+  let output = $("#output");
   let htmlForTaskDetail = "";
-  let htmlForCheckboxInput = "";
-  let htmlForCheckboxLabel = "";
   Object.keys(toDoListToDisplay.taskItems).forEach(function(key){
     const taskItem = toDoListToDisplay.findTask(key);
-    htmlForTaskDetail += "<li class=" + taskItem.id + ">" + taskItem.taskName + " " + taskItem.dueDate + " " + taskItem.importanceInt + "</li>";
-    //htmlForCheckboxInput += "<input class= form-check-input " + taskItem.id + "type='checkbox'" + " " + "id='flexCheckDefault'" + ">";
-    htmlForCheckboxLabel += "<label class= form-check-label " + taskItem.id + "for='flexCheckDefault'" + ">" + "Done?" + "</label>";
+    let htmlForCheckboxInput = "<input class='form-check-input taskInstance checkboxInput'" + " " + taskItem.id + " " + "type='checkbox'" + " " + "id='flexCheckDefault'" + ">";
+    let htmlForCheckboxLabel = "<label class='form-check-label taskInstance checkboxLabel'"+ " " + taskItem.id + " " + "for='flexCheckDefault'" + ">" + "Done?" + "</label>";
+    htmlForTaskDetail += "<li class= taskInstance" + " " + taskItem.id + ">" + taskItem.taskName + " " + taskItem.dueDate + " " + taskItem.importanceInt + " " + htmlForCheckboxLabel + htmlForCheckboxInput + "</li>";
   });
   output.html(htmlForTaskDetail);
-  //output.append(htmlForCheckboxInput);
-  //output.append(htmlForCheckboxLabel);
-
+  output.html().forEach(function(element){
+    element.appendChild(htmlForCheckboxLabel + htmlForCheckboxInput);
+  });
 }
 
 $(document).ready(function(){

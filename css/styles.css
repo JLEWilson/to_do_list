@@ -10,6 +10,10 @@
   min-width: 125px;
   max-width: 125px;
 }
+.checkboxLabel{
+  min-width: 70px;
+  max-width: 70px;
+}
 .addTaskGroup{
   display: none;
 }
